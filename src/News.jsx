@@ -18,7 +18,7 @@ const News = () => {
             pageSize: pageSize,
             category: categories,
             country: 'us',
-            apiKey: 'b53e4c2abc75415bbf56478978c8861e'
+            apiKey: '71a74c1a4bbc47ce97d5550cda986dd9'
           }
         });
         console.log(`Fetched ${categories} news.}`);
