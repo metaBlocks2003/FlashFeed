@@ -23,8 +23,8 @@ const News = () => {
           params: {
             page: page,
             pageSize: pageSize,
+            language: "en",
             category: categories,
-            country: 'us',
             apiKey: '71a74c1a4bbc47ce97d5550cda986dd9'
           }
         });
@@ -38,7 +38,7 @@ const News = () => {
     };
 
     fetchArticles();
-  }, [categories, page, search, type]);
+  }, [categories, page, search]);
 
 
   const handletype = (e) => {
@@ -124,13 +124,14 @@ const News = () => {
 
       {/* news articles */}
 
-      <ul className=' bg-[#7A2048] p-6 text-white rounded-2xl shadow-2xl border shadow-black'>
+      <ul className=' bg-[#7A2048] p-5 text-white rounded-2xl shadow-2xl border shadow-black'>
         {articles.map((article, index) => (
           <li key={index} className="mb-4">
-            <img className=' mb-2 h-20 rounded-3xl' src={article.urlToImage} alt="" />
-            <h2 className="text-xl font-semibold">{article.title}</h2>
-            <p className='py-2'>{article.description}</p>
-            <a href={article.url} target="_blank" rel="noopener noreferrer" className=" bg-red-800 text-white p-2 rounded-lg ">
+            <img className=' shadow-black shadow-xl mb-5 h-20 rounded-3xl' src={article.urlToImage} alt="" />
+            <h1 className="text-2xl font-bold">{article.title}</h1>
+            <p className=' font-medium py-2'>{article.description}</p>
+            <p href={article.url} className='py-4 text-blue-300'>{article.content}</p>
+            <a href={article.url} target="_blank" rel="noopener noreferrer" className=" bg-red-700 text-white p-2 rounded-lg ">
               Read more
             </a>
             <hr className='mt-4 h-0.5 bg-black' />
