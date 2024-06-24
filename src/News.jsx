@@ -79,10 +79,10 @@ const News = () => {
 <section className='pb-10'>
         <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-  <button href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-      <img src="https://persistventure.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Ff78663f8-78b0-4675-9f1f-807e68f53ff1%2Fd21112dc-736f-4db3-959a-6304909957dc%2FLogo_green_png.png?table=block&id=b12625b9-cb25-4feb-96fb-fe5162121c4d&spaceId=f78663f8-78b0-4675-9f1f-807e68f53ff1&width=250&userId=&cache=v2" class="h-16" alt="NeighborGood" />
-      <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">NeighborGood</span>
-  </button  >
+  <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+      <img className=' border-r-8' src="logobg.png" class="h-16 w-20"  alt="FlashFeed" />
+      <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">FlashFeed</span>
+  </a  >
   <div className="hidden md:flex gap-20">
 
  
@@ -150,7 +150,7 @@ const News = () => {
         
     </div>
     <div className='flex gap-5 justify-center py-5'>
-    <input onChange={handletype} onKeyDown={e=>{if(e.key==='Enter'){handleSearch()}}} type="search" id="default-search" class="border-black px- rounded-full py-2 text-center" placeholder="Search News" required />
+    <input onChange={handletype} onKeyDown={e=>{if(e.key==='Enter'){handleSearch()}}} type="search" id="default-search" class="border-black bg-blue-950 text-white hover:bg-slate-700 px- rounded-full py-2 text-center" placeholder="Search News" required />
     <button onClick={handleSearch}   class=" bg-blue-950 text-white  p-3 rounded-full">Search</button>
     </div>
     </center>
