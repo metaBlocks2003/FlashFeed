@@ -113,20 +113,47 @@ const News = () => {
 </nav>
 
         </section>
+        
 
         {/* navbar end */}
 
         {/*  category buttons  */}
 
-      <div className="my-10 mt-10 pt-10 gap-40 md:flex md:gap-5 justify-center">
-        <button onClick={() => handleCategoryChange('general')} className="mr-2 p-4 shadow-black shadow-2xl  bg-rose-800 text-white rounded-full">General</button>
-        <button onClick={() => handleCategoryChange('business')} className="mr-2 p-4 shadow-black shadow-2xl  bg-rose-800 text-white rounded-full">Business</button>
-        <button onClick={() => handleCategoryChange('technology')} className="mr-2 p-4 shadow-black shadow-2xl  bg-rose-800 text-white rounded-full">Technology</button>
-        <button onClick={() => handleCategoryChange('health')} className="mr-2 p-4 shadow-black shadow-2xl  bg-rose-800 text-white rounded-full">Health</button>
-        <button onClick={() => handleCategoryChange('science')} className="mr-2 p-4 shadow-black shadow-2xl  bg-rose-800 text-white rounded-full">Science</button>
-        <button onClick={() => handleCategoryChange('sports')} className="mr-2 p-4 shadow-black shadow-2xl  bg-rose-800 text-white rounded-full">Sports</button>
-        <button onClick={() => handleCategoryChange('entertainment')} className="p-4 shadow-black shadow-2xl  bg-rose-800 text-white rounded-full">Entertainment</button>
+
+
+
+      <div className="my-10 hidden mt-10 pt-10 gap-40 md:flex md:gap-5 justify-center">
+        <button onClick={() => handleCategoryChange('general')} className="mr-2 p-4 px-6 shadow-black shadow-2xl  bg-rose-800 text-white rounded-full">General</button>
+        <button onClick={() => handleCategoryChange('business')} className="mr-2 p-4 px-6 shadow-black shadow-2xl  bg-rose-800 text-white rounded-full">Business</button>
+        <button onClick={() => handleCategoryChange('technology')} className="mr-2 p-4 px-6 shadow-black shadow-2xl  bg-rose-800 text-white rounded-full">Technology</button>
+        <button onClick={() => handleCategoryChange('health')} className="mr-2 p-4 px-6 shadow-black shadow-2xl  bg-rose-800 text-white rounded-full">Health</button>
+        <button onClick={() => handleCategoryChange('science')} className="mr-2 p-4 px-6 shadow-black shadow-2xl  bg-rose-800 text-white rounded-full">Science</button>
+        <button onClick={() => handleCategoryChange('sports')} className="mr-2 p-4 px-6 shadow-black shadow-2xl  bg-rose-800 text-white rounded-full">Sports</button>
+        <button onClick={() => handleCategoryChange('entertainment')} className="p-4 px-6 shadow-black shadow-2xl  bg-rose-800 text-white rounded-full">Entertainment</button>
       </div>
+
+<center className='pt-20 pb-10 md:hidden'>
+      <div class=" md:hidden dropdown relative">
+        <button class="dropbtn flex  bg-rose-700  text-white font-bold py-2 px-4 rounded-2xl">
+            Categories <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>
+            
+        </button>
+        
+        <div class="dropdown-content  text-center hidden  shadow-lg mt-2 rounded-md">
+            <button onClick={() => handleCategoryChange('general')} class="block rounded-full text-center w-full px-4 py-2 text-white bg-pink-950">General</button>
+            <button onClick={() => handleCategoryChange('business')} class="block rounded-full text-center w-full px-1 py-2 text-white bg-pink-800 ">Business</button>
+            <button onClick={() => handleCategoryChange('health')}  class="block text-center rounded-full w-full px-4 py-2 text-white bg-pink-950">Health</button>
+            <button onClick={() => handleCategoryChange('science')} class="block text-center rounded-full w-full px-1 py-2 text-white bg-pink-800 ">Science</button>
+            <button onClick={() => handleCategoryChange('technology')} class="block text-center rounded-full w-full px-4 py-2 text-white bg-pink-950">Technology</button>
+            <button onClick={() => handleCategoryChange('sports')} class="block text-center rounded-full w-full px-1 py-2 text-white bg-pink-800 ">Sports</button>
+        </div>
+        
+    </div>
+    <div className='flex gap-5 justify-center py-5'>
+    <input onChange={handletype} onKeyDown={e=>{if(e.key==='Enter'){handleSearch()}}} type="search" id="default-search" class="border-black px- rounded-full py-2 text-center" placeholder="Search News" required />
+    <button onClick={handleSearch}   class=" bg-blue-950 text-white  p-3 rounded-full">Search</button>
+    </div>
+    </center>
 
       {/* category buttons end */}
 
@@ -138,7 +165,7 @@ const News = () => {
             <img className=' shadow-black shadow-xl mb-5 h-20 rounded-3xl' src={article.urlToImage} alt="" />
             <h1 className="text-2xl font-bold">{article.title}</h1>
             <p className=' font-medium py-2'>{article.description}</p>
-            <p href={article.url} className='py-4 text-blue-300'>{article.content}</p>
+            <p  className='py-4 text-blue-300'>{article.content}</p>
             <a href={article.url} target="_blank" rel="noopener noreferrer" className=" bg-red-700 text-white p-2 rounded-lg ">
               Read more
             </a>
